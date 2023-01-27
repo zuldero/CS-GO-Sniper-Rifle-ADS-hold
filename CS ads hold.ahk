@@ -9,7 +9,16 @@
 			Send {Blind}{3}
 			sleep 1
 			Send {Blind}{1}
-			Goto neverleavescope
+			PixelGetColor, Scope, 640, 720
+			while (Scope <> "0x000000")
+			{
+				PixelGetColor, Scope, 640, 720
+				if (GetKeyState("RButton", "P") = 1)
+				{
+					Send {Blind}{RButton}
+					sleep 50
+				}
+			}
 		}	
 	return
 
@@ -38,23 +47,4 @@
 			}
 		}
 	return
-
-
-
-
-
-
-	neverleavescope:
-		PixelGetColor, Scope, 640, 720
-		while (Scope <> "0x000000")
-		 {
-			PixelGetColor, Scope, 640, 720
-			if (GetKeyState("RButton", "P") = 1)
-			{
-				Send {Blind}{RButton}
-				sleep 50
-			}
-		 }
-	return
-
 }
