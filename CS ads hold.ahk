@@ -16,12 +16,12 @@
   
 	$*RButton up::
 		PixelGetColor, Scope, 640, 720
-		while (GetKeyState("RButton", "P") = 0)				 
+		while (Scope = "0x000000")
 		{
-			PixelGetColor, Scope, 640, 720
-			If (Scope = "0x000000")
+			if (GetKeyState("RButton", "P") = 0)
 			{
 				Send {Blind}{RButton}
+				PixelGetColor, Scope, 640, 720
 			}
 		}
 	return
@@ -33,6 +33,10 @@
 			sleep 30
 			Send {Blind}{3}
 			sleep 1
+			Send {Blind}{1}
+		}	
+	return
+}
 			Send {Blind}{1}
 		}	
 	return
