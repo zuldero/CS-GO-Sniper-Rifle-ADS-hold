@@ -1,4 +1,6 @@
-﻿$*RButton::
+#IfWinActive, Counter-Strike: Global Offensive - Direct3D 9
+{
+$*RButton::
 Send {Blind}{RButton}
 return
 
@@ -12,3 +14,4 @@ Send {Blind}{3}
 sleep 1
 Send {Blind}{1}
 return
+}
