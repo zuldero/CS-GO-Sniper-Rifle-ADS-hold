@@ -32,12 +32,8 @@
 		{
 			sleep 30
 			Send {Blind}{3}
-			sleep 1
-			Send {Blind}{1}
-		}	
-	return
-}
-			Send {Blind}{1}
+			;sleep 1
+			;Send {Blind}{1}
 		}	
 	return
 }
