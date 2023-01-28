@@ -2,17 +2,6 @@
 
 #IfWinActive, Counter-Strike: Global Offensive - Direct3D 9
 {
-	~*LButton::
-		PixelGetColor, Scope, 640, 720
-		If (Scope = "0x000000")
-		{
-			sleep 30
-			Send {Blind}{3}
-			sleep 1
-			Send {Blind}{1}
-		}	
-	return
-
 	$*RButton::
 		PixelGetColor, Scope, 640, 720
 		while (GetKeyState("RButton", "P") = 1)
@@ -20,7 +9,6 @@
 			PixelGetColor, Scope, 640, 720
 			if (Scope <> "0x000000")
 			{
-				
 				Send {Blind}{RButton}
 			}
 		 }
@@ -34,12 +22,18 @@
 			If (Scope = "0x000000")
 			{
 				Send {Blind}{RButton}
-				OutputDebug, "i triggerd"
-				
 			}
 		}
-		
+	return
 
-
+	~*LButton::
+		PixelGetColor, Scope, 640, 720
+		If (Scope = "0x000000")
+		{
+			sleep 30
+			Send {Blind}{3}
+			sleep 1
+			Send {Blind}{1}
+		}	
 	return
 }
